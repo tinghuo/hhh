@@ -1,0 +1,30 @@
+$sc:50;
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+    .box{
+        margin: 0;
+        padding: 0;
+        width: 312/$sc+rem;
+        height: 312/$sc+rem;
+        margin-top: 333/$sc+rem;
+        margin-left: 209/$sc+rem;
+    }
+    .pic{
+        margin: 0;
+        padding: 0;
+        width:352/$sc+rem;
+        height: 38/$sc+rem;
+        margin-left: 190/$sc+rem;
+        margin-top: 170/$sc+rem;
+    }
+    .mian{
+        margin: 0;
+        padding: 0;
+        margin-left: 240/$sc+rem;
+        margin-top: 20/$sc+rem;
+    }
+}
