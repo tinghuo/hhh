@@ -1,0 +1,10 @@
+html, body .box, body { height: 100%; }
+
+body { margin: 0; }
+body ul { list-style: none; padding: 0; }
+body .box { width: 100%; display: flex; flex-direction: column; }
+body header { height: 50px; width: 100%; background-color: #CCCCCC; }
+body section { width: 100%; flex: 1; overflow-y: auto; }
+body footer { height: 50px; width: 100%; background-color: #CCCCCC; }
+
+/*# sourceMappingURL=index.css.map */
