@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<script src="js/hammer.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul{
+				width: 400%;
+				height: 300px;
+				list-style: none;
+				transition: all 1s;
+			}
+			li{
+				width: 25%;
+				height: 300px;
+				float: left;
+			}
+			li:nth-child(1){
+				background-color: red;
+			}
+			li:nth-child(2){
+				background-color: green;
+			}
+			li:nth-child(3){
+				background-color: yellow;
+			}
+			li:nth-child(4){
+				background-color: blue;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul class="ul">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var n =0
+			var list=document.querySelector(".ul")
+			var lis = document.getElementsByTagName('li')
+			list.addEventListener('touchstart',function(ev){
+				ev.preventDefault();
+			})
+			var hins = new Hammer(list);
+			a=true;
+			hins.on('panleft',function(){
+				if(a){
+					n++;
+					if(n>=lis.length){
+						n=lis.length-1;
+					}
+					list.style.webkitTransform="translate3d(-"+n*25+"%,0,0)";
+					a=false;
+				}
+			})
+			hins.on('panright',function(){
+				if(a){
+					n--;
+					if(n<0){
+						n=0;
+					}
+					list.style.webkitTransform="translate3d(-"+n*25+"%,0,0)";
+					a=false;
+				}
+			})
+			list.addEventListener('touchend',function(ev){
+					a=true
+				})
+		</script>
+	</body>
+</html>
